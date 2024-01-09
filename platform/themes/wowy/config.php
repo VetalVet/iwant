@@ -59,38 +59,58 @@ return [
             $version = get_cms_version();
 
             /*import vendors*/
-            $theme->asset()->usePath()->add('normalize-css', 'css/vendors/normalize.css');
-            if (BaseHelper::isRtlEnabled()) {
-                $theme->asset()->usePath()->add('bootstrap-css', 'plugins/bootstrap/css/bootstrap.rtl.min.css');
-            } else {
-                $theme->asset()->usePath()->add('bootstrap-css', 'plugins/bootstrap/css/bootstrap.min.css');
-            }
+            // $theme->asset()->usePath()->add('normalize-css', 'css/vendors/normalize.css');
+            // if (BaseHelper::isRtlEnabled()) {
+            //     $theme->asset()->usePath()->add('bootstrap-css', 'plugins/bootstrap/css/bootstrap.rtl.min.css');
+            // } else {
+            //     $theme->asset()->usePath()->add('bootstrap-css', 'plugins/bootstrap/css/bootstrap.min.css');
+            // }
 
-            $theme->asset()->usePath()->add('fontawesome-css', 'css/vendors/fontawesome-all.min.css');
-            $theme->asset()->usePath()->add('wowy-font-css', 'css/vendors/wowy-font.css');
+            // $theme->asset()->usePath()->add('fontawesome-css', 'css/vendors/fontawesome-all.min.css');
+            // $theme->asset()->usePath()->add('wowy-font-css', 'css/vendors/wowy-font.css');
+            // $theme->asset()->usePath()->add('fonts-css', 'css/vendors/fonts.css');
 
             /*import plugins*/
-            $theme->asset()->usePath()->add('animate-css', 'css/plugins/animate.css');
-            $theme->asset()->usePath()->add('slick-css', 'css/plugins/slick.css');
+            // $theme->asset()->usePath()->add('animate-css', 'css/plugins/animate.css');
+            // $theme->asset()->usePath()->add('slick-css', 'css/plugins/slick.css');
 
-            $theme->asset()->usePath()->add('style-css', 'css/style.css', [], [], $version);
+            // $theme->asset()->usePath()->add('style-css', 'css/style.css', [], [], $version);
 
-            if (BaseHelper::siteLanguageDirection() == 'rtl') {
-                $theme->asset()->usePath()->add('rtl', 'css/rtl.css', [], [], $version);
-            }
+            // $theme->asset()->usePath()->add('fonts-css', 'fonts/fonts.css', [], [], $version);
+            $theme->asset()->usePath()->add('swiper-css', 'css/swiper-bundle.css');
+            $theme->asset()->usePath()->add('cart-css', 'css/cart.css', [], [], $version);
+            $theme->asset()->usePath()->add('popup-css', 'css/popup.css', [], [], $version);
+            $theme->asset()->usePath()->add('common-css', 'css/common.css', [], [], $version);
+
+            $theme->asset()->usePath()->add('main-page-css', 'css/index.css', [], [], $version);
+
+            // if (BaseHelper::siteLanguageDirection() == 'rtl') {
+            //     $theme->asset()->usePath()->add('rtl', 'css/rtl.css', [], [], $version);
+            // }
+
 
             $theme->asset()->container('footer')->usePath()->add('modernizr', 'js/vendor/modernizr-3.6.0.min.js');
             $theme->asset()->container('footer')->usePath()->add('jquery', 'js/vendor/jquery.min.js');
             $theme->asset()->container('footer')->usePath()->add('jquery-migrate', 'js/vendor/jquery-migrate.min.js');
-            $theme->asset()->container('footer')->usePath()->add('bootstrap-js', 'plugins/bootstrap/js/bootstrap.bundle.min.js');
-            $theme->asset()->container('footer')->usePath()->add('slick-js', 'js/plugins/slick.js');
-            $theme->asset()->container('footer')->usePath()->add('jquery.syotimer-js', 'js/plugins/jquery.syotimer.min.js');
-            $theme->asset()->container('footer')->usePath()->add('wow-js', 'js/plugins/wow.js');
-            $theme->asset()->container('footer')->usePath()->add('waypoints-js', 'js/plugins/waypoints.js');
-            $theme->asset()->container('footer')->usePath()->add('jquery.countdown-js', 'js/plugins/jquery.countdown.min.js');
-            $theme->asset()->container('footer')->usePath()->add('jquery.vticker-js', 'js/plugins/jquery.vticker-min.js');
-            $theme->asset()->container('footer')->usePath()->add('main', 'js/main.js', ['jquery.theia.sticky-js', 'jquery.elevatezoom-js'], [], $version);
+            // $theme->asset()->container('footer')->usePath()->add('bootstrap-js', 'plugins/bootstrap/js/bootstrap.bundle.min.js');
+            // $theme->asset()->container('footer')->usePath()->add('slick-js', 'js/plugins/slick.js');
+            // $theme->asset()->container('footer')->usePath()->add('jquery.syotimer-js', 'js/plugins/jquery.syotimer.min.js');
+            // $theme->asset()->container('footer')->usePath()->add('wow-js', 'js/plugins/wow.js');
+            // $theme->asset()->container('footer')->usePath()->add('waypoints-js', 'js/plugins/waypoints.js');
+            // $theme->asset()->container('footer')->usePath()->add('jquery.countdown-js', 'js/plugins/jquery.countdown.min.js');
+            // $theme->asset()->container('footer')->usePath()->add('jquery.vticker-js', 'js/plugins/jquery.vticker-min.js');
+            // $theme->asset()->container('footer')->usePath()->add('main', 'js/main.js', ['jquery.theia.sticky-js', 'jquery.elevatezoom-js'], [], $version);
             $theme->asset()->container('footer')->usePath()->add('backend', 'js/backend.js', [], [], $version);
+
+            // $theme->asset()->container('footer')->usePath()->add('swiper', 'js/swiper-bundle.min.js', [], [], $version);
+            // $theme->asset()->container('footer')->usePath()->add('dynamicAdapt', 'js/dynamicAdapt.js', [], [], $version);
+            // $theme->asset()->container('footer')->usePath()->add('popup', 'js/popup.js', [], [], $version);
+            // $theme->asset()->container('footer')->usePath()->add('common', 'js/common.js', [], [], $version);
+            
+            // $theme->asset()->container('footer')->usePath()->add('main-page-js', 'js/index.js', [], [], $version);
+            
+            
+            // $theme->asset()->container('footer')->usePath()->add('main', 'js/main.js', [], [], $version);
 
             if (function_exists('shortcode')) {
                 $theme->composer(['page', 'post', 'ecommerce.product'], function (View $view) {

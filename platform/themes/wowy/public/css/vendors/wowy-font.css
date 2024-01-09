@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: "wowy-font";
     src: url("../../fonts/wowy-font/wowy-font.ttf?5ff2f70882bedebb09d812961feeb5e7") format("truetype"),
         url("../../fonts/wowy-font/wowy-font.woff?5ff2f70882bedebb09d812961feeb5e7") format("woff"),
@@ -47,4 +47,43 @@ i[class^="wowy-font-"]:before, i[class*=" wowy-font-"]:before {
 }
 .wowy-font-tshirt:before {
     content: "\f10a";
+} */
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../../fonts/Gilroy-Regular.woff') format('woff'),
+         url('../../fonts/Gilroy-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../../fonts/Gilroy-Medium.woff') format('woff'),
+         url('../../fonts/Gilroy-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../../fonts/Gilroy-Semibold.woff') format('woff'),
+         url('../../fonts/Gilroy-Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../../fonts/Gilroy-Bold.woff') format('woff'),
+         url('../../fonts/Gilroy-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../../fonts/Gilroy-Extrabold.woff') format('woff'),
+         url('../../fonts/Gilroy-Extrabold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
 }

@@ -1,0 +1,2233 @@
+// Карточка товара
+.good {
+    background-color: #f6f6f6;
+    padding: 31px 30px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    .photo {
+        max-width: 235px;
+        max-height: 235px;
+        overflow: hidden;
+        margin: auto;
+        img {
+            // height: 100%;
+        }
+    }
+
+    h3 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: #333333;
+        margin-bottom: auto;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
+    }
+
+    .rating {
+        display: flex;
+        gap: 8px;
+
+        .stars {
+            margin-left: -3px;
+            margin-top: -2px;
+        }
+        .stars span {
+            font-size: 20px;
+            margin: 0 16px 0 0;
+            line-height: 15px;
+        }
+        .stars > span:before {
+            content: "★";
+        }
+        .stars > span.active {
+            color: #00963d;
+        }
+
+        & > span {
+            font-weight: 600;
+            margin-top: -2px;
+            font-size: 14px;
+            line-height: 17px;
+            color: #bcbcbc;
+        }
+    }
+
+    .bot {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3px;
+        .price {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            color: #333333;
+        }
+
+        .buy-btn {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            color: #333333;
+            margin-top: 1px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+    }
+
+    &.loadmore {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 27px;
+        div {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            max-width: 130px;
+            color: #a7a7a7;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .good {
+        padding: 11px 10px 18px;
+        gap: 11px;
+        .photo {
+            max-width: 145px;
+            max-height: 145px;
+        }
+        h3 {
+            font-size: 13px;
+            line-height: 16px;
+            margin-bottom: 7px;
+        }
+        .rating {
+            .stars {
+                margin-left: -2px;
+            }
+            .stars span {
+                font-size: 17px;
+                margin: 0 13.3px 0 0;
+            }
+            & > span {
+                font-size: 12px;
+                line-height: 14px;
+            }
+        }
+        .bot {
+            margin-top: 5px;
+            .buy-btn {
+                font-size: 0;
+                margin-top: 3px;
+                margin-right: 7px;
+            }
+        }
+        &.loadmore {
+            gap: 1px;
+            padding: 52px 40px;
+            justify-content: start;
+            svg {
+                max-width: 100px;
+            }
+            div {
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+    }
+}
+
+.cabinet-page {
+    background: #f6f6f6;
+    // padding: 16px 0 86px;
+    padding: 21px 0 49px;
+    min-height: 800px;
+    .container {
+        display: flex;
+        justify-content: space-between;
+
+        .nav-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            flex: 0 1 23.4%;
+            .nav-tab {
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 19px;
+                background: #ffffff;
+                color: #333333;
+
+                padding: 20px 20px 20px 62px;
+                position: relative;
+                svg {
+                    position: absolute;
+                    fill: #333333;
+                    left: 21px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    path {
+                        fill: #333333;
+                    }
+                }
+                &:hover {
+                    text-decoration: none;
+                }
+
+                &.active {
+                    cursor: default;
+                    color: #ffffff;
+                    background: #00a046;
+                    svg {
+                        fill: #ffffff;
+                        path {
+                            fill: #ffffff;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tab-content {
+            flex: 0 1 75%;
+            .tab-pane {
+                display: none;
+                &.active {
+                    display: flex;
+                    .back_to_menu {
+                        display: none;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 6px 0 0;
+                        padding: 20px 0;
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 19px;
+                        border: 1px solid #00a046;
+                        color: #00a046;
+                        position: relative;
+                        text-decoration: none;
+                        svg {
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: 22px;
+                        }
+                    }
+                }
+
+                &.contacts {
+                    flex-direction: column;
+                    gap: 20px;
+
+                    & > div {
+                        background: #ffffff;
+                        padding: 38px 72px 58px 42px;
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                        h2 {
+                            font-weight: 700;
+                            font-size: 20px;
+                            line-height: 24px;
+                            color: #333333;
+                            flex: 1 1 100%;
+                            margin-bottom: 27px;
+                        }
+                        & > div {
+                            position: relative;
+                            flex: 0 1 46.2%;
+                            margin-bottom: 25px;
+                            input {
+                                width: 100%;
+                                padding: 13px;
+                                border-bottom: 1px solid #000000;
+                                &::placeholder {
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    color: #bcbcbc;
+                                }
+
+                                &.phone-ukr {
+                                    &::before {
+                                        position: absolute;
+                                        content: "";
+                                    }
+                                }
+                            }
+                        }
+
+                        .tel {
+                            svg {
+                                position: absolute;
+                                top: 15px;
+                                left: 15px;
+                            }
+                            input {
+                                padding: 13px 13px 13px 36px;
+                            }
+                        }
+
+                        .sex {
+                            flex: 0 1 46.2%;
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: 21px;
+                            margin-bottom: 0;
+                            label {
+                                background: #f6f6f6;
+                                padding: 20px 18px 18px 24px;
+                                display: flex;
+                                align-items: center;
+                                cursor: pointer;
+                                gap: 29px;
+                                flex: 0 1 46%;
+                                input {
+                                    width: 18px;
+                                    height: 18px;
+                                    accent-color: #00a046;
+                                }
+                                span {
+                                    font-weight: 600;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    color: #333333;
+                                }
+                            }
+                        }
+
+                        .birthday {
+                            gap: 15px;
+                            display: flex;
+                            padding: 20px 3px 0px;
+                            border-bottom: 1px solid #000000;
+                            margin: 7px 0 0 0px;
+                            align-items: center;
+                            p {
+                                white-space: nowrap;
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 19px;
+                                color: #333333;
+                                svg {
+                                    display: none;
+                                }
+                            }
+                            select {
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 19px;
+                                color: #bcbcbc;
+                                outline: none;
+                            }
+                        }
+                    }
+
+                    .save-contacts {
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 19px;
+                        background: #00a046;
+                        color: #ffffff;
+                        padding: 20px 58px;
+                        width: fit-content;
+                    }
+                }
+
+                &.orders {
+                    margin-left: 18px;
+                    flex-direction: column;
+                    min-height: 100%;
+                    .title {
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 21px;
+                        color: #00a046;
+                        background-color: #fff;
+                        padding: 22px 47px 22px 38px;
+                    }
+
+                    .table {
+                        display: flex;
+                        background-color: #fff;
+                        padding: 6px 47px 40px 38px;
+                        flex-direction: column;
+                        gap: 20px;
+                        .order {
+                            border: 1px solid #e1e1e1;
+                            padding: 18px 24px 15px 18px;
+                            justify-content: space-between;
+                            background: #f6f6f6;
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            background: #ffffff;
+
+                            .date {
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 16px;
+                                color: #444444;
+                                flex: 0 1 23.7%;
+                                .status {
+                                    margin-top: 7px;
+                                    font-size: 14px;
+                                    line-height: 17px;
+                                    font-weight: 700;
+                                    color: #fff;
+                                    padding: 2px 9px;
+                                    width: fit-content;
+                                    p {
+                                        font-weight: 700;
+                                        font-size: 14px;
+                                        line-height: 17px;
+                                    }
+                                    &.inwork {
+                                        background-color: #f79e1b;
+                                    }
+                                    &.canceled {
+                                        background-color: #ff0000;
+                                    }
+                                    &.done {
+                                        background-color: #00a046;
+                                    }
+                                }
+                            }
+
+                            .price {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                                flex: 0 1 7%;
+                                span {
+                                    font-weight: 600;
+                                    font-size: 12px;
+                                    line-height: 14px;
+                                    color: #444444;
+                                }
+                                p {
+                                    font-weight: 700;
+                                    font-size: 14px;
+                                    line-height: 17px;
+                                    color: #444444;
+                                    white-space: nowrap;
+                                }
+                            }
+
+                            .products {
+                                display: flex;
+                                align-items: center;
+                                gap: 5px;
+                                width: 36%;
+                                flex: 0 1 36%;
+                                div {
+                                    width: 55px;
+                                    height: 55px;
+                                    overflow: hidden;
+                                    img {
+                                        width: 55px;
+                                        height: 55px;
+                                    }
+                                }
+                                .more {
+                                    font-weight: 700;
+                                    font-size: 25px;
+                                    line-height: 30px;
+                                    color: #a5a5a5;
+                                    background: #f6f6f6;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    width: 47px;
+                                    height: 47px;
+                                    margin-left: 7px;
+                                }
+                            }
+                            a {
+                                font-weight: 600;
+                                font-size: 14px;
+                                line-height: 17px;
+                                text-align: center;
+                                color: #ffffff;
+                                background: #fff;
+                                padding: 11px 42px 11px 35px;
+                                border: 1px solid #00a046;
+                                color: #00a046;
+                                position: relative;
+                                svg {
+                                    position: absolute;
+                                    right: 15px;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                }
+                                &:hover {
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+
+                    .load-more {
+                        background: #00a046;
+                        color: #fff;
+                        padding: 18px 51px 18px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 41px auto 0;
+                        gap: 20px;
+                        width: fit-content;
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 19px;
+                        cursor: pointer;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                &.featured {
+                    .featured-products {
+                        display: grid;
+                        grid-gap: 20px;
+                        grid-template-columns: repeat(3, minmax(23.8%, 1fr));
+                        margin-left: 6px;
+                        .good {
+                            background-color: #fff;
+                            position: relative;
+                            .feature {
+                                position: absolute;
+                                top: 23px;
+                            }
+                            .photo {
+                                margin: 0 auto;
+                                img {
+                                    height: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.testimonials {
+                    .testimonial-list {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+                        margin-left: 5px;
+                        width: 100%;
+                        margin-right: 13px;
+                        .testimonial {
+                            padding: 25px 58px 21px 54px;
+                            background: #ffffff;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 100%;
+                            gap: 4.9%;
+                            .photo {
+                                img {
+                                }
+                            }
+
+                            .info {
+                                margin-right: auto;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 6px;
+                                .title {
+                                    font-weight: 600;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    color: #333333;
+                                }
+                                .articul {
+                                    font-weight: 400;
+                                    font-size: 12px;
+                                    line-height: 14px;
+                                    color: #bcbcbc;
+                                }
+                            }
+
+                            .green-btn {
+                                font-weight: 600;
+                                font-size: 14px;
+                                line-height: 17px;
+                                text-align: center;
+                                color: #ffffff;
+                                border: 1px solid #00a046;
+                                background: #00a046;
+                                padding: 10.5px 28.5px;
+                                margin-top: -4px;
+                                &:hover {
+                                    text-decoration: none;
+                                    border: 1px solid #00a046;
+                                    color: #00a046;
+                                    background-color: #fff;
+                                }
+                            }
+                        }
+
+                        .load-more {
+                            background: #00a046;
+                            color: #fff;
+                            padding: 18px 51px 18px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin: 46px auto 0;
+                            gap: 20px;
+                            width: fit-content;
+                            font-weight: 700;
+                            font-size: 16px;
+                            line-height: 19px;
+                            cursor: pointer;
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+
+                &.partner-program {
+                    flex-direction: column;
+                    gap: 25px;
+                    margin-bottom: -22px;
+
+                    .partner {
+                        padding: 38px 72px 23px 42px;
+                        background: #ffffff;
+                        display: flex;
+                        justify-content: space-between;
+                        // flex-wrap: wrap;
+                        gap: 10px;
+
+                        & > div {
+                            position: relative;
+                            flex: 0 1 46.2%;
+                            margin-bottom: 25px;
+                            input {
+                                width: 100%;
+                                padding: 13px;
+                                border-bottom: 1px solid #000000;
+                                &::placeholder {
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    color: #bcbcbc;
+                                }
+
+                                &.phone-ukr {
+                                    &::before {
+                                        position: absolute;
+                                        content: "";
+                                    }
+                                }
+                            }
+                        }
+                        .card {
+                            margin-bottom: 0;
+                            h2 {
+                                margin-bottom: 0;
+                                position: relative;
+                                font-weight: 700;
+                                font-size: 20px;
+                                line-height: 24px;
+                                display: flex;
+                                gap: 8px;
+
+                                span {
+                                    cursor: pointer;
+                                    position: relative;
+
+                                    .hint {
+                                        opacity: 0;
+                                        visibility: hidden;
+                                        pointer-events: none;
+                                        position: absolute;
+                                        background-color: #fff;
+                                        padding: 10px;
+                                        -webkit-box-shadow: 1px 1px 4px 0px
+                                            rgba(0, 0, 0, 1);
+                                        -moz-box-shadow: 1px 1px 4px 0px
+                                            rgba(0, 0, 0, 1);
+                                        box-shadow: 1px 1px 4px 0px
+                                            rgba(0, 0, 0, 1);
+                                        top: -50px;
+                                        right: -52px;
+                                        font-weight: 400;
+                                        font-size: 16px;
+                                        line-height: 19px;
+                                        color: #333333;
+
+                                        &:hover {
+                                            opacity: 1;
+                                            visibility: visible;
+                                            // pointer-events: visible;
+                                        }
+                                    }
+
+                                    &:hover {
+                                        .hint {
+                                            opacity: 1;
+                                            visibility: visible;
+                                            pointer-events: visible;
+                                        }
+                                    }
+                                }
+                            }
+
+                            div {
+                                margin-top: 13px;
+                            }
+                        }
+                        .referal {
+                            flex: 0 1 38.8%;
+                            margin-top: 3px;
+                            .reflink {
+                                display: flex;
+                                gap: 13px;
+                                margin-top: 21px;
+                                align-items: center;
+                                a {
+                                    color: #005cb0;
+                                    white-space: nowrap;
+                                }
+                                div {
+                                    background: #f6f6f6;
+                                    padding: 6px 10px 6px 14px;
+                                    display: flex;
+                                    gap: 12px;
+                                    align-items: center;
+                                    cursor: pointer;
+                                    span {
+                                        font-weight: 700;
+                                        font-size: 15px;
+                                        line-height: 18px;
+                                        color: #00a046;
+                                    }
+                                    svg {
+                                        path {
+                                            fill: #00a046;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .general {
+                        flex: 0 1 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        .right {
+                            display: flex;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            background-color: #fff;
+                            flex: 0 1 48.4%;
+                            padding: 35px 74px 34px 41px;
+                            h2 {
+                                flex: 0 1 100%;
+                                font-weight: 700;
+                                font-size: 20px;
+                                line-height: 24px;
+                                color: #333333;
+                                margin-bottom: 15px;
+                            }
+
+                            .balance {
+                                p {
+                                    font-weight: 700;
+                                    font-size: 32px;
+                                    line-height: 39px;
+                                    color: #00a046;
+                                }
+                                div {
+                                    font-weight: 400;
+                                    font-size: 18px;
+                                    line-height: 21px;
+                                    color: #333333;
+                                }
+                            }
+
+                            .withdraw {
+                                font-weight: 700;
+                                font-size: 16px;
+                                line-height: 19px;
+
+                                color: #ffffff;
+                                background: #00a046;
+                                padding: 18px 29px;
+                            }
+                        }
+
+                        .left {
+                            display: flex;
+                            flex-direction: column;
+                            background-color: #fff;
+                            gap: 13px;
+                            flex: 0 1 48.4%;
+                            padding: 32px 33px 25px 30px;
+                            .block {
+                                background: #f6f6f6;
+                                padding: 15px 30px 16px 17px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                flex: 0 1 32.8%;
+                                gap: 27px;
+
+                                span {
+                                    margin-right: auto;
+                                }
+                                p {
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    color: #333333;
+                                }
+                                strong {
+                                    font-weight: 600;
+                                    font-size: 20px;
+                                    line-height: 24px;
+                                    color: #333333;
+                                    white-space: nowrap;
+                                }
+                            }
+
+                            .cashflow {
+                                padding: 15px 30px 16px 17px;
+                                flex: 0 1 35%;
+                            }
+
+                            .withdraw {
+                                font-weight: 700;
+                                font-size: 16px;
+                                line-height: 19px;
+                                background-color: #00a046;
+                                color: #ffffff;
+                                padding: 18px 29px;
+                                margin-left: auto;
+                                &:hover {
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+
+                    .partners-block {
+                        .top {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 23px;
+                            & > svg {
+                                margin-right: 14px;
+                            }
+                            h2 {
+                                font-weight: 700;
+                                font-size: 20px;
+                                line-height: 24px;
+                                color: #333333;
+                                white-space: nowrap;
+                            }
+
+                            .search {
+                                margin-left: 3.5%;
+                                display: flex;
+                                align-items: center;
+                                input {
+                                    font-weight: 600;
+                                    font-size: 14px;
+                                    line-height: 17px;
+                                    color: #333333;
+                                    background: transparent;
+                                    padding-left: 11px;
+                                }
+                            }
+
+                            .view {
+                                display: flex;
+                                align-items: center;
+                                margin-left: auto;
+                                gap: 12px;
+                                span {
+                                    font-weight: 600;
+                                    font-size: 14px;
+                                    line-height: 17px;
+                                    color: #333333;
+                                    margin-right: 13px;
+                                }
+                                .ongrid {
+                                    // margin-left: 17.1%;
+                                }
+                                .onlist {
+                                    // margin-left: 19px;
+                                }
+                            }
+
+                            select {
+                                margin-left: 5.4%;
+                                font-weight: 600;
+                                font-size: 14px;
+                                line-height: 17px;
+                                color: #333333;
+                                background: transparent;
+                                margin-top: -2px;
+                                padding-right: 2px;
+                            }
+                        }
+
+                        .partners-list {
+                            display: grid;
+                            grid-template-columns: repeat(3, minmax(30%, 1fr));
+                            gap: 20px;
+                            .partner-info {
+                                background: #ffffff;
+                                .name {
+                                    display: flex;
+                                    justify-content: stretch;
+                                    border-bottom: 3px dashed #f6f6f6;
+                                    padding: 23px 13px 20px 20px;
+                                    margin-top: 0;
+                                    gap: 9px;
+
+                                    p {
+                                        font-weight: 600;
+                                        font-size: 14px;
+                                        line-height: 17px;
+                                        color: #333333;
+                                    }
+                                    span {
+                                        font-weight: 600;
+                                        font-size: 14px;
+                                        line-height: 17px;
+                                        text-align: right;
+                                        color: #333333;
+                                        margin-left: auto;
+                                    }
+                                }
+                                .info {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    flex-direction: column;
+                                    padding: 15px 16px 21px 20px;
+                                    gap: 8px;
+                                    margin-top: 10px;
+                                    & > div {
+                                        display: flex;
+                                        justify-content: space-between;
+
+                                        p,
+                                        a {
+                                            font-weight: 600;
+                                            font-size: 14px;
+                                            line-height: 17px;
+                                            color: #333333;
+                                        }
+                                        span {
+                                            font-weight: 600;
+                                            font-size: 14px;
+                                            line-height: 17px;
+                                            text-align: right;
+                                            color: #333333;
+                                            margin-left: auto;
+                                            margin-top: 2px;
+                                        }
+                                        a {
+                                            text-decoration-line: underline;
+                                            color: #0083b0;
+                                        }
+
+                                        &.cashflow {
+                                            span {
+                                                color: #27ae60;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &._list {
+                                grid-template-columns: repeat(
+                                    1,
+                                    minmax(30%, 1fr)
+                                );
+                                gap: 16px;
+                                .partner-info {
+                                    display: flex;
+                                    align-items: center;
+                                    // height: 51px;
+
+                                    .name {
+                                        flex: 0 1 28.7%;
+                                        border-bottom: 0;
+                                        padding: 16px 20px;
+                                        margin-top: 0;
+                                        align-items: center;
+                                    }
+                                    .info {
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        flex: 1 1 auto;
+                                        gap: 8px;
+                                        margin-top: 0;
+                                        padding: 0;
+                                        & > div {
+                                            display: flex;
+                                            justify-content: space-between;
+                                            border-left: 2px solid #f6f6f6;
+                                            align-items: center;
+                                            // position: relative;
+                                            flex: 1 1 auto;
+                                            padding: 16px 20px;
+                                            gap: 5px;
+                                            // &::before{
+                                            //     position: absolute;
+                                            //     content: "";
+                                            //     height: 100%;
+                                            //     width: 2px;
+                                            //     background-color: #f6f6f6;
+                                            //     left: 0;
+                                            //     top: 0;
+                                            // }
+                                            p {
+                                                white-space: nowrap;
+                                            }
+
+                                            span {
+                                                white-space: nowrap;
+                                                margin-top: 0;
+                                            }
+
+                                            &.ref-percent {
+                                                // flex: 0 1 35.5%;
+                                                display: flex;
+                                            }
+
+                                            &.cashflow {
+                                                // flex: 0 1 36%;
+                                                span {
+                                                    // margin-left: 15%;
+                                                }
+                                            }
+                                            &.subpartners {
+                                                // flex: 0 1 29.7%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .load-more {
+                        background: #00a046;
+                        color: #fff;
+                        padding: 18px 65px 18px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 26px auto 0;
+                        gap: 20px;
+                        width: fit-content;
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 19px;
+                        cursor: pointer;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .cabinet-page {
+        .container {
+            .nav-tabs {
+                flex: 0 0 23.4%;
+            }
+
+            .tab-content {
+                .tab-pane {
+                    &.active {
+                    }
+
+                    &.contacts {
+                        & > div {
+                            h2 {
+                            }
+                            & > div {
+                                flex: 0 1 49%;
+
+                                input {
+                                    &::placeholder {
+                                    }
+
+                                    &.phone-ukr {
+                                        &::before {
+                                        }
+                                    }
+                                }
+                            }
+
+                            .tel {
+                                svg {
+                                }
+                                input {
+                                }
+                            }
+
+                            .sex {
+                                flex: 0 1 100%;
+                                label {
+                                    flex: 0 1 49%;
+
+                                    input {
+                                    }
+                                    span {
+                                    }
+                                }
+                            }
+
+                            .birthday {
+                                gap: unset;
+                                row-gap: 15px;
+                                flex: 0 1 100%;
+                                flex-wrap: wrap;
+                                border-bottom: none;
+                                justify-content: space-between;
+                                p {
+                                    flex: 0 1 100%;
+                                    align-items: center;
+                                    display: flex;
+                                    gap: 8px;
+                                    svg {
+                                        display: block;
+                                    }
+                                }
+                                select {
+                                    flex: 0 1 49%;
+                                    text-align: center;
+                                    border-bottom: 1px solid #000;
+                                    // padding: 5px 0px;
+                                    padding: 10px;
+                                }
+                            }
+                        }
+
+                        .partner {
+                            .card {
+                                h2 {
+                                    span {
+                                        .hint {
+                                            &:hover {
+                                            }
+                                        }
+
+                                        &:hover {
+                                            .hint {
+                                            }
+                                        }
+                                    }
+                                }
+
+                                div {
+                                }
+                            }
+                            .referal {
+                                .reflink {
+                                    a {
+                                    }
+                                    div {
+                                        span {
+                                        }
+                                        svg {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .save-contacts {
+                        }
+                    }
+
+                    &.partner-program {
+                        .partner {
+                            padding: 32px 33px 25px 30px;
+                        }
+
+                        .general {
+                            .right {
+                                padding: 32px 33px 25px 30px;
+
+                                h2 {
+                                }
+
+                                .balance {
+                                    p {
+                                    }
+                                    div {
+                                    }
+                                }
+
+                                .withdraw {
+                                }
+                            }
+
+                            .left {
+                                .block {
+                                    span {
+                                    }
+                                    p {
+                                    }
+                                    strong {
+                                    }
+                                }
+
+                                .cashflow {
+                                }
+
+                                .withdraw {
+                                    &:hover {
+                                    }
+                                }
+                            }
+                        }
+
+                        .back_to_menu {
+                            padding: 20px 70px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .cabinet-page {
+        padding: 11px 0 86px;
+        min-height: 731px;
+        .container {
+            .nav-tabs {
+                display: none;
+
+                flex: 0 0 23.4%;
+                .nav-tab {
+                    svg {
+                        path {
+                        }
+                    }
+                    &:hover {
+                    }
+
+                    &.active {
+                        svg {
+                            path {
+                            }
+                        }
+                    }
+                }
+            }
+
+            .tab-content {
+                flex: 0 1 100%;
+                .tab-pane {
+                    &.active {
+                        .back_to_menu {
+                            display: flex;
+                            padding: 20px 55px;
+                            max-width: 320px;
+                            margin: 6px auto 0;
+                        }
+                    }
+
+                    &.contacts {
+                        & > div {
+                            h2 {
+                            }
+                            & > div {
+                                flex: 0 1 49%;
+
+                                input {
+                                    &::placeholder {
+                                    }
+
+                                    &.phone-ukr {
+                                        &::before {
+                                        }
+                                    }
+                                }
+                            }
+
+                            .tel {
+                                svg {
+                                }
+                                input {
+                                }
+                            }
+
+                            .sex {
+                                flex: 0 1 100%;
+                                label {
+                                    flex: 0 1 49%;
+
+                                    input {
+                                    }
+                                    span {
+                                    }
+                                }
+                            }
+
+                            .birthday {
+                                gap: unset;
+                                row-gap: 15px;
+                                flex: 0 1 100%;
+                                flex-wrap: wrap;
+                                border-bottom: none;
+                                justify-content: space-between;
+                                p {
+                                    flex: 0 1 100%;
+                                    align-items: center;
+                                    display: flex;
+                                    gap: 8px;
+                                    svg {
+                                        display: block;
+                                    }
+                                }
+                                select {
+                                    flex: 0 1 49%;
+                                    text-align: center;
+                                    border-bottom: 1px solid #000;
+                                    // padding: 5px 0px;
+                                    padding: 10px;
+                                }
+                            }
+                        }
+
+                        .partner {
+                            .card {
+                                h2 {
+                                    span {
+                                        .hint {
+                                            &:hover {
+                                            }
+                                        }
+
+                                        &:hover {
+                                            .hint {
+                                            }
+                                        }
+                                    }
+                                }
+
+                                div {
+                                }
+                            }
+                            .referal {
+                                .reflink {
+                                    a {
+                                    }
+                                    div {
+                                        span {
+                                        }
+                                        svg {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .save-contacts {
+                            width: 280px;
+                            margin: 0 auto;
+                        }
+                    }
+
+                    &.featured {
+                        .featured-products {
+                            .back_to_menu {
+                                grid-column: 1 / span 3;
+                            }
+                        }
+                    }
+
+                    &.orders {
+                        margin: 0;
+                        .table {
+                            .order {
+                                .products {
+                                    div {
+                                        width: 35px;
+                                        height: 35px;
+
+                                        img {
+                                            width: 35px;
+                                            height: 35px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .back_to_menu {
+                            margin: 20px auto 0;
+                        }
+                    }
+
+                    &.partner-program {
+                        .general {
+                            .right {
+                                h2 {
+                                    font-size: 18px;
+                                    line-height: 22px;
+                                }
+
+                                .balance {
+                                    p {
+                                    }
+                                    div {
+                                    }
+                                }
+
+                                .withdraw {
+                                }
+                            }
+
+                            .left {
+                                .block {
+                                    span {
+                                        font-size: 14px;
+                                        line-height: 16px;
+                                    }
+                                    p {
+                                    }
+                                    strong {
+                                    }
+                                }
+
+                                .cashflow {
+                                }
+
+                                .withdraw {
+                                    &:hover {
+                                    }
+                                }
+                            }
+                        }
+                        .back_to_menu {
+                            padding: 20px 68px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .cabinet-page {
+        min-height: auto;
+        padding: 11px 0 20px;
+
+        .container {
+            // .nav-tabs {
+
+            //     .nav-tab {
+
+            //         svg {
+
+            //             path {
+
+            //             }
+            //         }
+            //         &:hover {
+
+            //         }
+
+            //         &.active {
+            //             svg {
+
+            //                 path {
+
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
+
+            .tab-content {
+                .tab-pane {
+                    &.active {
+                        .back_to_menu {
+                            max-width: 100%;
+                            margin: 6px 0 0;
+                        }
+                    }
+
+                    &.contacts {
+                        & > div {
+                            padding: 23px 17px 44px 18px;
+
+                            h2 {
+                                display: none;
+                            }
+                            & > div {
+                                flex: 0 1 100%;
+                                margin-bottom: 19px;
+
+                                input {
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    padding: 10px 14px 13px;
+                                }
+                            }
+                            .name {
+                                order: 1;
+                            }
+                            .surname {
+                                order: 2;
+                            }
+                            .mail {
+                                order: 4;
+                            }
+
+                            .tel {
+                                order: 3;
+                                svg {
+                                    top: 12px;
+                                    left: 14px;
+                                }
+                                input {
+                                    padding: 11px 13px 13px 36px;
+                                }
+                            }
+
+                            .sex {
+                                order: 5;
+                                flex: 0 1 100%;
+                                margin-top: 8px;
+                                label {
+                                    flex: 0 1 47%;
+                                    gap: 21px;
+                                }
+                            }
+
+                            .birthday {
+                                padding: 20px 0px 0px;
+                                margin: 9px 0 0 0px;
+                                order: 6;
+                                gap: unset;
+                                row-gap: 15px;
+                                flex: 0 1 100%;
+                                flex-wrap: wrap;
+                                border-bottom: none;
+                                justify-content: space-between;
+                                p {
+                                    flex: 0 1 100%;
+                                    align-items: center;
+                                    display: flex;
+                                    gap: 8px;
+                                    svg {
+                                        display: block;
+                                    }
+                                }
+                                select {
+                                    flex: 0 1 47%;
+                                    text-align: center;
+                                    border-bottom: 1px solid #000;
+                                    padding: 10px;
+                                }
+                            }
+                        }
+
+                        .save-contacts {
+                            width: 100%;
+                        }
+                        .back_to_menu {
+                            margin: 0;
+                        }
+                    }
+
+                    &.featured {
+                        .featured-products {
+                            grid-gap: 10px;
+                            grid-template-columns: repeat(2, minmax(48%, 1fr));
+                            margin-left: 0;
+                            .good {
+                                .feature {
+                                    top: 13px;
+                                    left: 13px;
+                                    svg {
+                                        width: 16px;
+                                        height: 14px;
+                                    }
+                                }
+                                .photo {
+                                    img {
+                                    }
+                                }
+                            }
+
+                            .back_to_menu {
+                                grid-column: 1 / span 2;
+                            }
+                        }
+                    }
+
+                    &.partner-program {
+                        gap: 20px;
+                        margin-bottom: 4px;
+
+                        .partner {
+                            padding: 31px 22px 8px 17px;
+                            flex-direction: column;
+
+                            & > div {
+                                flex: none;
+                                input {
+                                    padding: 14px;
+
+                                    &::placeholder {
+                                    }
+
+                                    &.phone-ukr {
+                                        &::before {
+                                        }
+                                    }
+                                }
+                            }
+                            .card {
+                                h2 {
+                                    font-size: 18px;
+                                    line-height: 22px;
+                                    gap: 9px;
+                                    span {
+                                        top: 1px;
+                                    }
+                                }
+
+                                div {
+                                    margin-top: 15px;
+                                }
+                            }
+                            .referal {
+                                flex: none;
+                                margin-top: 27px;
+                                gap: 20px;
+                                p {
+                                    font-size: 14px;
+                                    line-height: 16px;
+                                }
+
+                                .reflink {
+                                    gap: 23px;
+                                    margin-top: 22px;
+
+                                    a {
+                                        font-size: 14px;
+                                        line-height: 16px;
+                                    }
+                                    div {
+                                        span {
+                                        }
+                                        svg {
+                                            path {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .general {
+                            flex-direction: column;
+                            gap: 20px;
+
+                            .right {
+                                flex: none;
+                                padding: 27px 19px 40px 17px;
+
+                                h2 {
+                                    margin-bottom: 24px;
+                                }
+
+                                .balance {
+                                    p {
+                                        margin-bottom: -1px;
+                                    }
+                                    div {
+                                    }
+                                }
+
+                                .withdraw {
+                                    margin-top: -3px;
+                                }
+                            }
+
+                            .left {
+                                flex: none;
+                                padding: 32px 19px 25px 17px;
+
+                                .block {
+                                    padding: 15px 21px 16px 17px;
+                                    flex: 0 1 100%;
+                                    gap: 17px;
+
+                                    span {
+                                    }
+                                    p {
+                                    }
+                                    strong {
+                                    }
+                                }
+
+                                .cashflow {
+                                    padding: 15px 21px 16px 17px;
+                                }
+
+                                .withdraw {
+                                    &:hover {
+                                    }
+                                }
+                            }
+                        }
+
+                        .partners-block {
+                            .top {
+                                padding-left: 0;
+                                margin-top: 2px;
+                                flex-wrap: wrap;
+                                margin-bottom: 22px;
+                                & > svg {
+                                    margin-top: -6px;
+                                }
+                                h2 {
+                                    order: 1;
+                                    font-size: 18px;
+                                    line-height: 22px;
+                                    margin-top: -4px;
+                                }
+
+                                .search {
+                                    flex: 1 1 100%;
+                                    order: 3;
+                                    background: #ffffff;
+                                    padding: 0;
+                                    margin: 20px 0 0 0;
+
+                                    svg {
+                                        margin-left: 17px;
+                                    }
+                                    input {
+                                        width: 100%;
+                                        font-size: 18px;
+                                        line-height: 21px;
+                                        display: flex;
+                                        align-items: center;
+                                        padding: 15px 17px 14px 17px;
+
+                                        color: #333333;
+                                        &::placeholder {
+                                            color: #cccccc;
+                                        }
+                                    }
+                                }
+
+                                .view {
+                                    display: none;
+                                }
+
+                                select {
+                                    margin-left: auto;
+                                    background: #ffffff;
+                                    order: 2;
+                                    padding: 11px;
+                                    text-align: center;
+                                    width: 170px;
+                                }
+                            }
+
+                            .partners-list {
+                                grid-template-columns: repeat(
+                                    1,
+                                    minmax(100%, 1fr)
+                                );
+                                gap: 20px;
+                                .partner-info {
+                                    background: #ffffff;
+                                    .name {
+                                        display: flex;
+                                        justify-content: stretch;
+                                        border-bottom: 3px dashed #f6f6f6;
+                                        padding: 23px 18px 20px 20px;
+                                        margin-top: 0;
+                                        gap: 9px;
+
+                                        p {
+                                            font-weight: 600;
+                                            font-size: 14px;
+                                            line-height: 17px;
+                                            color: #333333;
+                                        }
+                                        span {
+                                            font-weight: 600;
+                                            font-size: 14px;
+                                            line-height: 17px;
+                                            text-align: right;
+                                            color: #333333;
+                                            margin-left: auto;
+                                        }
+                                    }
+                                    .info {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        flex-direction: column;
+                                        padding: 15px 21px 23px 20px;
+                                        gap: 10px;
+                                        margin-top: 10px;
+                                        & > div {
+                                            display: flex;
+                                            justify-content: space-between;
+
+                                            p,
+                                            a {
+                                                font-weight: 600;
+                                                font-size: 14px;
+                                                line-height: 17px;
+                                                color: #333333;
+                                            }
+                                            span {
+                                                font-weight: 600;
+                                                font-size: 14px;
+                                                line-height: 17px;
+                                                text-align: right;
+                                                color: #333333;
+                                                margin-left: auto;
+                                                margin-top: 0px;
+                                            }
+                                            a {
+                                                text-decoration-line: underline;
+                                                color: #0083b0;
+                                            }
+
+                                            &.cashflow {
+                                                span {
+                                                    color: #27ae60;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &._list {
+                                    grid-template-columns: repeat(
+                                        1,
+                                        minmax(30%, 1fr)
+                                    );
+                                    gap: 16px;
+                                    .partner-info {
+                                        display: flex;
+                                        align-items: center;
+                                        // height: 51px;
+
+                                        .name {
+                                            flex: 0 1 28.7%;
+                                            border-bottom: 0;
+                                            padding: 16px 20px;
+                                            margin-top: 0;
+                                            align-items: center;
+                                        }
+                                        .info {
+                                            display: flex;
+                                            flex-direction: row;
+                                            justify-content: space-between;
+                                            flex: 1 1 auto;
+                                            gap: 8px;
+                                            margin-top: 0;
+                                            padding: 0;
+                                            & > div {
+                                                display: flex;
+                                                justify-content: space-between;
+                                                border-left: 2px solid #f6f6f6;
+                                                align-items: center;
+                                                // position: relative;
+                                                flex: 1 1 auto;
+                                                padding: 16px 20px;
+                                                gap: 5px;
+                                                // &::before{
+                                                //     position: absolute;
+                                                //     content: "";
+                                                //     height: 100%;
+                                                //     width: 2px;
+                                                //     background-color: #f6f6f6;
+                                                //     left: 0;
+                                                //     top: 0;
+                                                // }
+                                                p {
+                                                    white-space: nowrap;
+                                                }
+
+                                                span {
+                                                    white-space: nowrap;
+                                                    margin-top: 0;
+                                                }
+
+                                                &.ref-percent {
+                                                    // flex: 0 1 35.5%;
+                                                    display: flex;
+                                                }
+
+                                                &.cashflow {
+                                                    // flex: 0 1 36%;
+                                                    span {
+                                                        // margin-left: 15%;
+                                                    }
+                                                }
+                                                &.subpartners {
+                                                    // flex: 0 1 29.7%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .load-more {
+                            margin: 7px auto 0;
+                            width: 100%;
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+
+                        .back_to_menu {
+                            margin: 0;
+                        }
+                    }
+
+                    &.orders {
+                        margin: 0 0 12px 0;
+
+                        .title {
+                            display: none;
+                        }
+
+                        .table {
+                            background-color: transparent;
+                            padding: 0;
+                            .order {
+                                // flex-direction: column;
+                                flex-wrap: wrap;
+                                align-items: start;
+                                border: 0;
+                                padding: 25px 24px 29px 19px;
+                                .date {
+                                    order: 1;
+                                    flex: 0 1 100%;
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    & > p {
+                                        span {
+                                            font-weight: 700;
+                                            font-size: 14px;
+                                            line-height: 17px;
+                                        }
+                                    }
+                                    .status {
+                                        margin: 0 17px 0 0;
+                                        p {
+                                        }
+                                        &.inwork {
+                                        }
+                                        &.canceled {
+                                        }
+                                        &.done {
+                                        }
+                                    }
+                                }
+
+                                .price {
+                                    flex-direction: row;
+                                    align-self: center;
+                                    order: 3;
+                                    gap: 5px;
+                                    margin: 4px 0 0 -2px;
+
+                                    span {
+                                        font-weight: 500;
+                                        font-size: 14px;
+                                        line-height: 16px;
+                                    }
+                                    p {
+                                    }
+                                }
+
+                                .products {
+                                    order: 2;
+                                    flex: 0 1 100%;
+                                    width: 100%;
+                                    margin: 16px 0 14px -2px;
+
+                                    div {
+                                        width: 59px;
+                                        height: 59px;
+
+                                        img {
+                                            width: 59px;
+                                            height: 59px;
+                                        }
+                                    }
+                                    .more {
+                                        margin-left: 3px;
+                                        width: 53px;
+                                        height: 53px;
+                                    }
+                                }
+                                a {
+                                    padding: 11px 35px 10px 23px;
+                                    margin-right: -3px;
+                                    order: 4;
+
+                                    svg {
+                                    }
+                                    &:hover {
+                                    }
+                                }
+                            }
+                        }
+
+                        .back_to_menu {
+                            width: 100%;
+                            margin: 20px auto 0;
+                        }
+
+                        .load-more {
+                            width: 100%;
+                            margin: 22px auto 0;
+                            gap: 18px;
+                            svg {
+                                width: 23px;
+                            }
+                            &:hover {
+                            }
+                        }
+                    }
+
+                    &.testimonials {
+                        .testimonial-list {
+                            margin: 0;
+                            .testimonial {
+                                padding: 31px 35px 32px 17px;
+                                align-items: center;
+                                justify-content: space-between;
+
+                                .photo {
+                                    flex: 0 0 108px;
+                                    img {
+                                        width: 108px;
+                                        height: 108px;
+                                    }
+                                }
+
+                                .info {
+                                    margin: -5px 0 0 0;
+                                    flex: 0 1 56.5%;
+                                    gap: 0;
+                                    .title {
+                                        font-size: 14px;
+                                        line-height: 17px;
+                                    }
+                                    .articul {
+                                        font-size: 12px;
+                                        line-height: 14px;
+                                        margin: 5px 0 14px;
+                                    }
+
+                                    .green-btn {
+                                        padding: 10.5px 18.5px;
+                                        margin: 0;
+
+                                        &:hover {
+                                        }
+                                    }
+                                }
+                            }
+
+                            .load-more {
+                                margin: 6px 0 0;
+                                gap: 20px;
+                                width: 100%;
+                                svg {
+                                    width: 22px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #fff;
+}
+
+.cabinet_bc {
+    display: block;
+    background: #f6f6f6;
+    padding: 22px 0 1px;
+    overflow-x: auto;
+    .container {
+        display: flex;
+        gap: 6.3px;
+        align-items: center;
+        overflow-x: auto;
+        svg {
+            min-width: fit-content;
+        }
+        a,
+        span {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            color: #00963d;
+            white-space: nowrap;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .cabinet_bc {
+        padding: 13px 0 1px;
+        .container{
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.popup_sms {
+    .popup__content {
+        .popup__body {
+            padding: 84px 30px 35px;
+            .message {
+                .phone {
+                    margin: 30px 0 22px;
+                    input {
+                        padding: 13px 23px 10px 23px;
+                    }
+                }
+                .nosms {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    a {
+                        font-weight: 600;
+                        font-size: 13px;
+                        line-height: 16px;
+                        text-decoration-line: underline;
+                        color: #bcbcbc;
+                    }
+                    .error {
+                        font-weight: 600;
+                        font-size: 13px;
+                        line-height: 16px;
+                        color: #ff0000;
+                    }
+                }
+                .green-btn {
+                    margin-top: 26px;
+                }
+            }
+        }
+    }
+}
+
+.popup_auth {
+    .popup__content {
+        .popup__body {
+            padding: 104px 30px 77px;
+        }
+    }
+}
+
+.popup_sms {
+    .popup__content {
+        .popup__body {
+            padding: 84px 30px 35px;
+            .message {
+                .phone {
+                    margin: 30px 0 22px;
+                    input {
+                        padding: 13px 23px 10px 23px;
+                    }
+                }
+                .nosms {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    a {
+                        font-weight: 600;
+                        font-size: 13px;
+                        line-height: 16px;
+                        text-decoration-line: underline;
+                        color: #bcbcbc;
+                    }
+                    .error {
+                        font-weight: 600;
+                        font-size: 13px;
+                        line-height: 16px;
+                        color: #ff0000;
+                    }
+                }
+                .green-btn {
+                    margin-top: 26px;
+                }
+            }
+        }
+    }
+}
+
+.popup_view_featured_unlogin {
+    .popup__body {
+        padding: 71px 30px 53px;
+        .message {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21px;
+            text-align: center;
+            color: #000000;
+            max-width: 250px;
+            margin: 0 auto;
+            & > a {
+                color: #00a046;
+                font-weight: 700;
+                text-decoration: underline;
+            }
+        }
+    }
+}

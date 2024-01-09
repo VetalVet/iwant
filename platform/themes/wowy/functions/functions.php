@@ -33,6 +33,18 @@ register_sidebar([
 ]);
 
 register_sidebar([
+    'id' => 'footer_sidebar_contact_info',
+    'name' => __('Footer sidebar right with contact information'),
+    'description' => __('Widgets in footer of page'),
+]);
+
+register_sidebar([
+    'id' => 'footer_sidebar_bot',
+    'name' => __('Footer sidebar bottom'),
+    'description' => __('Widgets in footer of page'),
+]);
+
+register_sidebar([
     'id' => 'product_sidebar',
     'name' => __('Product sidebar'),
     'description' => __('Widgets in the product page'),

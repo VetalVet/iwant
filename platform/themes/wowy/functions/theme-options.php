@@ -149,6 +149,21 @@ app()->booted(function () {
             ],
         ])
         ->setField([
+            'id' => 'schedule',
+            'section_id' => 'opt-text-subsection-general',
+            'type' => 'text',
+            'label' => __('Schedule label'),
+            'attributes' => [
+                'name' => 'schedule',
+                'value' => null,
+                'options' => [
+                    'class' => 'form-control',
+                    'placeholder' => __('Schedule label'),
+                    'data-counter' => 120,
+                ],
+            ],
+        ])
+        ->setField([
             'id' => 'working_hours',
             'section_id' => 'opt-text-subsection-general',
             'type' => 'text',
@@ -159,6 +174,36 @@ app()->booted(function () {
                 'options' => [
                     'class' => 'form-control',
                     'placeholder' => __('Working Hours'),
+                    'data-counter' => 120,
+                ],
+            ],
+        ])
+        ->setField([
+            'id' => 'working_hours2',
+            'section_id' => 'opt-text-subsection-general',
+            'type' => 'text',
+            'label' => __('Working Hours in saturday'),
+            'attributes' => [
+                'name' => 'working_hours2',
+                'value' => null,
+                'options' => [
+                    'class' => 'form-control',
+                    'placeholder' => __('Working Hours2'),
+                    'data-counter' => 120,
+                ],
+            ],
+        ])
+        ->setField([
+            'id' => 'working_hours3',
+            'section_id' => 'opt-text-subsection-general',
+            'type' => 'text',
+            'label' => __('Working Hours in sunday'),
+            'attributes' => [
+                'name' => 'working_hours3',
+                'value' => null,
+                'options' => [
+                    'class' => 'form-control',
+                    'placeholder' => __('Working Hours3'),
                     'data-counter' => 120,
                 ],
             ],

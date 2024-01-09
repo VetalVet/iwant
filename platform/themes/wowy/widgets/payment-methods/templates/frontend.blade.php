@@ -1,4 +1,4 @@
-<div class="col-lg-4">
+{{-- <div class="col-lg-4">
     <h5 class="widget-title mb-30 wow fadeIn animated">{!! BaseHelper::clean($config['name'] ?: __('Payments')) !!}</h5>
     <div class="row">
         <div class="col-md-4 col-lg-12">
@@ -8,4 +8,10 @@
             @endif
         </div>
     </div>
-</div>
+</div> --}}
+
+@if ($config['image'] || theme_option('payment_methods'))
+    <div class="logos">
+        <img class="wow fadeIn animated" src="{{ RvMedia::getImageUrl($config['image'] ?: theme_option('payment_methods')) }}" alt="{{ __('Payment methods') }}">
+    </div>
+@endif

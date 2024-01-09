@@ -420,6 +420,7 @@
                             method: 'GET',
                             success: response => {
                                 if (!response.error) {
+                                    console.log(response.data.html);
                                     $('.cart-dropdown-wrap').html(response.data.html);
                                     $('.mini-cart-icon span').text(response.data.count);
                                 }

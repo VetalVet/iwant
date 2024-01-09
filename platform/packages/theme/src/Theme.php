@@ -859,4 +859,11 @@ class Theme implements ThemeContract
             return array_merge($defaultIcons, $icons);
         });
     }
+
+    
+
+    public function test()
+    {
+        return Theme::get('page');
+    }
 }
