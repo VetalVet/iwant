@@ -8,7 +8,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         {{-- {!! BaseHelper::googleFonts('https://fonts.googleapis.com/css2?family=' . urlencode(theme_option('font_text', 'Poppins')) . ':ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap') !!} --}}
-        <link rel="stylesheet" href="<?php echo $_SERVER['APP_URL']; ?>/themes/wowy/css/fonts.css">
+        <link rel="stylesheet" href="<?php //echo $_SERVER['APP_URL']; ?>/themes/wowy/css/fonts.css">
             
         <style>
             :root {
