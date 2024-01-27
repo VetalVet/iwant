@@ -313,20 +313,20 @@
     <?php //print_r($_SERVER); ?>
 
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    {{-- <script defer src="<?php echo $_SERVER['APP_URL']; ?>/themes/wowy/js/assets/swiper-bundle.min.js"></script> --}}
-    <script defer src="<?php echo $_SERVER['APP_URL']; ?>/themes/wowy/js/dynamicAdapt.js"></script>
-    <script defer src="<?php echo $_SERVER['APP_URL']; ?>/themes/wowy/js/popup.js"></script>
-    <script defer src="<?php echo $_SERVER['APP_URL']; ?>/themes/wowy/js/common.js"></script>
+    {{-- <script defer src="<?php //echo $_SERVER['APP_URL']; ?>/themes/wowy/js/assets/swiper-bundle.min.js"></script> --}}
+    <script defer src="<?php //echo $_SERVER['APP_URL']; ?>/themes/wowy/js/dynamicAdapt.js"></script>
+    <script defer src="<?php //echo $_SERVER['APP_URL']; ?>/themes/wowy/js/popup.js"></script>
+    <script defer src="<?php //echo $_SERVER['APP_URL']; ?>/themes/wowy/js/common.js"></script>
 
     @if($_SERVER['REQUEST_URI'] == '/')
-        <script defer src="<?php echo $_SERVER['APP_URL']; ?>/themes/wowy/js/index.js"></script>
+        <script defer src="<?php //echo $_SERVER['APP_URL']; ?>/themes/wowy/js/index.js"></script>
     @elseif(str_contains($_SERVER['REQUEST_URI'], 'product-categories') || str_contains($_SERVER['REQUEST_URI'], 'products'))
-        <script defer src="<?php echo $_SERVER['APP_URL']; ?>/themes/wowy/js/nouislider.js"></script>
-        <script defer src="<?php echo $_SERVER['APP_URL']; ?>/themes/wowy/js/wNumb.min.js"></script>
-        <script defer src="<?php echo $_SERVER['APP_URL']; ?>/themes/wowy/js/select.js"></script>
+        <script defer src="<?php //echo $_SERVER['APP_URL']; ?>/themes/wowy/js/nouislider.js"></script>
+        <script defer src="<?php //echo $_SERVER['APP_URL']; ?>/themes/wowy/js/wNumb.min.js"></script>
+        <script defer src="<?php //echo $_SERVER['APP_URL']; ?>/themes/wowy/js/select.js"></script>
 
-        <script defer src="<?php echo $_SERVER['APP_URL']; ?>/themes/wowy/js/main.js"></script>
-        <script defer src="<?php echo $_SERVER['APP_URL']; ?>/themes/wowy/js/shop.js"></script>
+        <script defer src="<?php //echo $_SERVER['APP_URL']; ?>/themes/wowy/js/main.js"></script>
+        <script defer src="<?php //echo $_SERVER['APP_URL']; ?>/themes/wowy/js/shop.js"></script>
     @endif
     {!! Theme::place('footer') !!}
 </body>
