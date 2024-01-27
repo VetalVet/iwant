@@ -9,26 +9,26 @@
     $layout = ($layout && in_array($layout, array_keys(get_product_single_layouts()))) ? $layout : 'product-full-width';
 @endphp
 
-<div class="list-content-loading">
+{{-- <div class="list-content-loading">
     <div class="half-circle-spinner">
         <div class="circle circle-1"></div>
         <div class="circle circle-2"></div>
     </div>
-</div>
+</div> --}}
 
-<div class="shop-product-filter">
+{{-- <div class="shop-product-filter">
     <div class="totall-product">
         <p>{!! BaseHelper::clean(__('We found :total items for you!', ['total' => '<strong class="text-brand">' . $products->total() . '</strong>'])) !!}</p>
     </div>
     @include(Theme::getThemeNamespace() . '::views/ecommerce/includes/sort')
-</div>
+</div> --}}
 
 <input type="hidden" name="page" data-value="{{ $products->currentPage() }}">
 <input type="hidden" name="sort-by" value="{{ BaseHelper::stringify(request()->input('sort-by')) }}">
 <input type="hidden" name="num" value="{{ BaseHelper::stringify(request()->input('num')) }}">
 <input type="hidden" name="q" value="{{ BaseHelper::stringify(request()->input('q')) }}">
 
-<div class="row">
+{{-- <div class="row"> --}}
     @forelse ($products as $product)
         <div class="col-lg-{{ 12 / ($layout != 'product-full-width' ? 3 : 4) }} col-md-4">
             @include(Theme::getThemeNamespace() . '::views.ecommerce.includes.product-item', compact('product'))
@@ -38,7 +38,7 @@
             <p>{{ __('No products found!') }}</p>
         </div>
     @endforelse
-</div>
+{{-- </div> --}}
 
 @if ($products->total() > 0)
     <br>

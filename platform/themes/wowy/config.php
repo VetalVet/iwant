@@ -82,7 +82,7 @@ return [
             $theme->asset()->usePath()->add('popup-css', 'css/popup.css', [], [], $version);
             $theme->asset()->usePath()->add('common-css', 'css/common.css', [], [], $version);
 
-            $theme->asset()->usePath()->add('main-page-css', 'css/index.css', [], [], $version);
+            // $theme->asset()->usePath()->add('main-page-css', 'css/index.css', [], [], $version);
 
             // if (BaseHelper::siteLanguageDirection() == 'rtl') {
             //     $theme->asset()->usePath()->add('rtl', 'css/rtl.css', [], [], $version);

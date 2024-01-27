@@ -1,15 +1,15 @@
 {!! Theme::partial('header') !!}
 
-<main class="main" id="main-section">
-    @if (Theme::get('hasBreadcrumb', true))
+{{-- <main class="main" id="main-section"> --}}
+    {{-- @if (Theme::get('hasBreadcrumb', true))
         {!! Theme::partial('breadcrumb') !!}
-    @endif
+    @endif --}}
 
-    <section class="mt-60 mb-60">
-        <div class="container">
+    {{-- <section class="mt-60 mb-60">
+        <div class="container"> --}}
             {!! Theme::content() !!}
-        </div>
+        {{-- </div>
     </section>
-</main>
+</main> --}}
 
 {!! Theme::partial('footer') !!}

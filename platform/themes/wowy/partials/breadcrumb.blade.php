@@ -1,22 +1,31 @@
-<div class="page-header breadcrumb-wrap">
-    <div class="container">
-        <div class="breadcrumb">
-            @foreach ($crumbs = Theme::breadcrumb()->getCrumbs() as $i => $crumb)
-                @if ($i != (count($crumbs) - 1))
-                    <div class="breadcrumb-item d-inline-block">
-                        <a href="{{ $crumb['url'] }}" title="{{ $crumb['label'] }}">
-                            {!! BaseHelper::clean($crumb['label']) !!}
-                        </a>
-                    </div>
-                    <span></span>
-                @else
-                    <div class="breadcrumb-item d-inline-block active">
-                        <i>
-                            {!! BaseHelper::clean($crumb['label']) !!}
-                        </i>
-                    </div>
-                @endif
-            @endforeach
-        </div>
-    </div>
+<div class="breadcrumbs">
+    @foreach ($crumbs = Theme::breadcrumb()->getCrumbs() as $i => $crumb)
+        @if ($i != (count($crumbs) - 1))
+            @if($i == 0)
+                <a href="{{ $crumb['url'] }}" title="{{ $crumb['label'] }}">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M15.8171 7.55822C15.3977 7.13878 8.74952 0.490608 8.44202 0.183108C8.198 -0.0610361 7.80224 -0.0610361 7.55822 0.183108C7.22191 0.519417 0.59559 7.14562 0.183108 7.55822C-0.0610361 7.80224 -0.0610361 8.198 0.183108 8.44215C0.42713 8.68617 0.822888 8.68617 1.06691 8.44215L1.22914 8.27991V15.3752C1.22914 15.7205 1.50906 16.0002 1.85415 16.0002H14.1461C14.4912 16.0002 14.7711 15.7205 14.7711 15.3752V8.27991L14.9332 8.44215C15.1774 8.68617 15.5731 8.68617 15.8171 8.44215C16.0613 8.198 16.0613 7.80224 15.8171 7.55822ZM9.83352 14.7502H6.16684V11.0835H9.83352V14.7502ZM13.5211 14.7502H11.0835V10.4585C11.0835 10.1133 10.8038 9.83352 10.4585 9.83352H5.54183C5.19661 9.83352 4.91682 10.1133 4.91682 10.4585V14.7502H2.47929V7.02989L8.00012 1.50893L13.5211 7.02989V14.7502Z"
+                            fill="#333333" />
+                    </svg>
+                </a>
+            @else
+                <a href="{{ $crumb['url'] }}" title="{{ $crumb['label'] }}">{{ $crumb['label'] }}</a>
+            @endif
+
+            <span>
+                <svg width="6" height="8" viewBox="0 0 6 8" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3.66853 3.9999L1.03412 6.63431C0.7217 6.94673 0.7217 7.45327 1.03412 7.76569C1.34654 8.0781 1.85307 8.0781 2.16549 7.76569L5.35499 4.57619C5.35858 4.57273 5.36214 4.56923 5.36568 4.56568C5.6781 4.25327 5.6781 3.74673 5.36568 3.43431L2.16568 0.234315C1.85327 -0.078105 1.34673 -0.078105 1.03431 0.234315C0.721895 0.546734 0.721895 1.05327 1.03431 1.36569L3.66853 3.9999Z"
+                        fill="#333333" />
+                </svg>
+            </span>
+        @else
+            <a href="#">
+                {!! BaseHelper::clean($crumb['label']) !!}
+            </a>
+        @endif
+    @endforeach
 </div>

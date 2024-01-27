@@ -344,6 +344,7 @@ var __webpack_exports__ = {};
               method: 'GET',
               success: function success(response) {
                 if (!response.error) {
+                  // console.log(response.data.html);
                   $('.cart-dropdown-wrap').html(response.data.html);
                   $('.mini-cart-icon span').text(response.data.count);
                 }
