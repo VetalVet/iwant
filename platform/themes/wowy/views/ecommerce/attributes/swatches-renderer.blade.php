@@ -1,8 +1,8 @@
 @php
     $key = mt_rand();
 @endphp
-<div class="product-attributes"
-     data-target="{{ route('public.web.get-variation-by-attributes', ['id' => $product->id]) }}">
+{{-- <div class="product-attributes"
+     data-target="{{ route('public.web.get-variation-by-attributes', ['id' => $product->id]) }}"> --}}
     @php
         $variationInfo = $productVariationsInfo;
         $variationNextIds = [];
@@ -28,4 +28,4 @@
                 $variationNextIds);
         @endphp
     @endforeach
-</div>
+{{-- </div> --}}

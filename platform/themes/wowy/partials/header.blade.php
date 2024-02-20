@@ -8,7 +8,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         {{-- {!! BaseHelper::googleFonts('https://fonts.googleapis.com/css2?family=' . urlencode(theme_option('font_text', 'Poppins')) . ':ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap') !!} --}}
-        <link rel="stylesheet" href="<?php //echo $_SERVER['APP_URL']; ?>/themes/wowy/css/fonts.css">
+        <link rel="stylesheet" href="/themes/wowy/css/fonts.css">
             
         <style>
             :root {
@@ -50,10 +50,12 @@
         @endphp
         
         @if($_SERVER['REQUEST_URI'] == '/')
-            <link rel="stylesheet" href="<?php //echo $_SERVER['APP_URL']; ?>/themes/wowy/css/index.css">
-        @elseif(str_contains($_SERVER['REQUEST_URI'], 'product-categories') || str_contains($_SERVER['REQUEST_URI'], 'products'))
-            <link rel="stylesheet" href="<?php //echo $_SERVER['APP_URL']; ?>/themes/wowy/css/nouislider.css">
-            <link rel="stylesheet" href="<?php //echo $_SERVER['APP_URL']; ?>/themes/wowy/css/shop.css">
+            <link rel="stylesheet" href="/themes/wowy/css/index.css">
+        {{-- @elseif(str_contains($_SERVER['REQUEST_URI'], 'product-categories') || str_contains($_SERVER['REQUEST_URI'], 'products'))
+            <link rel="stylesheet" href="/themes/wowy/css/nouislider.css">
+            <link rel="stylesheet" href="/themes/wowy/css/shop.css"> --}}
+        @elseif(str_contains($_SERVER['REQUEST_URI'], 'products'))
+            <link rel="stylesheet" href="/themes/wowy/css/product.css">
         @endif
     </head>
     <body @if (BaseHelper::siteLanguageDirection() == 'rtl') dir="rtl" @endif class="@if (BaseHelper::siteLanguageDirection() == 'rtl') rtl @endif header_full_true wowy-template css_scrollbar lazy_icons btnt4_style_2 zoom_tp_2 css_scrollbar template-index wowy_toolbar_true hover_img2 swatch_style_rounded swatch_list_size_small label_style_rounded wrapper_full_width header_full_true header_sticky_true hide_scrolld_true des_header_3 h_banner_true top_bar_true prs_bordered_grid_1 search_pos_canvas lazyload @if (Theme::get('bodyClass')) {{ Theme::get('bodyClass') }} @endif">

@@ -331,7 +331,18 @@
 .product .container .top-product .product-info .variations {
     display: flex;
     margin: 23px 0 29px;
+    flex-direction: column;
+    gap: 20px;
 }
+.product .container .top-product .product-info .variations .attr_wrap {
+    display: flex;
+    height: fit-content;
+}
+
+.product .container .top-product .product-info .variations .attr_wrap .attribute-name {
+    margin-right: 10px;
+}
+
 .product .container .top-product .product-info .variations a {
     background: #eba883;
     width: 20px;

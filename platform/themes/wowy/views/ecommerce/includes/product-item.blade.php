@@ -66,6 +66,8 @@
             @endif
         </div>
     </div> --}}
+
+    {{-- upsell-slide  для апселлов--}} 
     <div class="good swiper-slide">
         {{-- <pre>
         {{ print_r($category) }}

@@ -1,10 +1,10 @@
-@php
+{{-- @php
     Theme::asset()->container('footer')->usePath()->add('jquery.theia.sticky-js', 'js/plugins/jquery.theia.sticky.js');
-@endphp
+@endphp --}}
 
 {!! Theme::partial('header') !!}
 
-<main class="main" id="main-section">
+{{-- <main class="main" id="main-section">
     @if (Theme::get('hasBreadcrumb', true))
         {!! Theme::partial('breadcrumb') !!}
     @endif
@@ -17,12 +17,12 @@
                         {!! dynamic_sidebar('product_sidebar') !!}
                     </div>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-9"> --}}
                     {!! Theme::content() !!}
-                </div>
+                {{-- </div>
             </div>
         </div>
     </section>
-</main>
+</main> --}}
 
 {!! Theme::partial('footer') !!}
